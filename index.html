@@ -3,69 +3,188 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>КаргоСайт — Международная логистика для бизнеса</title>
+  <title>КаргоСайт — TransitFlow стиль</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;500;600&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;500;600&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>.container{max-width:1200px;margin:0 auto;padding:0 1rem}body{font-family:Krub,sans-serif;color:#666C89}.section-title{font-family:Rubik,sans-serif;color:#1C1F35}.sticky-shadow{box-shadow:0 8px 20px rgba(9,18,66,.08)}</style>
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: 'Krub', sans-serif; color: #666C89; background: #fff; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+    .heading { font-family: 'Rubik', sans-serif; color: #1C1F35; }
+    .tag {
+      font-family: 'Rubik', sans-serif;
+      font-size: 14px;
+      letter-spacing: .08em;
+      text-transform: capitalize;
+      color: #1C1F35;
+      padding: 4px 12px;
+      border-left: 4px solid #FFBE34;
+      background: #e8e8e880;
+      display: inline-block;
+    }
+    .sticky-shadow { box-shadow: 0 10px 30px rgba(9,18,66,.18); }
+  </style>
 </head>
-<body class="bg-white">
-  <header id="siteHeader" class="sticky top-0 z-50 bg-white border-b">
-    <div class="container py-4 flex items-center justify-between gap-4">
-      <a href="index.html" class="flex items-center gap-2" aria-label="Перейти на главную страницу">
-        <img src="assets/icons/logo-mark.svg" alt="Логотип компании КаргоСайт" class="h-9 w-9"><span class="font-['Rubik'] text-2xl text-[#091242]">КаргоСайт</span>
-      </a>
-      <button id="mobileMenuButton" class="md:hidden text-2xl" aria-label="Открыть мобильное меню">☰</button>
-      <nav class="hidden md:flex gap-5 text-[#1C1F35]">
-        <a data-nav href="index.html">Главная</a><a data-nav href="services.html">Услуги</a><a data-nav href="advantages.html">Преимущества</a><a data-nav href="cases.html">Кейсы</a><a data-nav href="reviews.html">Отзывы</a><a data-nav href="faq.html">FAQ</a><a data-nav href="contacts.html">Контакты</a>
-      </nav>
-      <div class="hidden md:flex items-center gap-3"><a href="tel:+78001234567" class="font-['Rubik'] text-[#091242]" aria-label="Позвонить в КаргоСайт">+7 (800) 123-45-67</a><button data-open-calculator class="bg-[#FFBE34] px-4 py-2 rounded text-[#091242]">Получить расчет</button></div>
+<body>
+  <header id="siteHeader" class="sticky top-0 z-50">
+    <div class="bg-[#091242] py-4 border-b border-white/10">
+      <div class="container flex flex-wrap items-center justify-between gap-4">
+        <a href="index.html" class="flex items-center gap-3" aria-label="Главная КаргоСайт">
+          <img src="assets/icons/logo-mark.svg" class="w-10 h-10" alt="Логотип">
+          <span class="font-['Rubik'] text-[28px] leading-none text-white">TransitFlow</span>
+        </a>
+        <div class="hidden md:flex items-center gap-7 text-white/90 text-sm">
+          <p>Пн - Сб 9:00 - 18:00</p>
+          <a href="mailto:contact@logistics.com">Email: contact@logistics.com</a>
+          <a href="tel:+78001234567">Тел: +7 (800) 123-45-67</a>
+        </div>
+      </div>
     </div>
-    <nav id="mobileNav" class="hidden border-t md:hidden bg-white"><div class="container py-4 flex flex-col gap-3"><a data-nav href="index.html">Главная</a><a data-nav href="services.html">Услуги</a><a data-nav href="advantages.html">Преимущества</a><a data-nav href="cases.html">Кейсы</a><a data-nav href="reviews.html">Отзывы</a><a data-nav href="faq.html">FAQ</a><a data-nav href="contacts.html">Контакты</a><a href="tel:+78001234567">+7 (800) 123-45-67</a><button data-open-calculator class="bg-[#FFBE34] py-2 rounded text-[#091242]">Получить расчет</button></div></nav>
+
+    <div class="bg-[#091242]/90 backdrop-blur-sm">
+      <div class="container flex items-center justify-between py-4 gap-4">
+        <nav class="hidden md:flex items-center gap-8 text-white/90">
+          <a data-nav href="index.html" class="text-white">Home</a>
+          <a data-nav href="about.html">About</a>
+          <a data-nav href="services.html">Pages</a>
+          <a data-nav href="project.html">Project</a>
+          <a data-nav href="contact.html">Contact</a>
+        </nav>
+        <button id="mobileMenuButton" class="md:hidden text-white text-2xl" aria-label="Открыть мобильное меню">☰</button>
+        <div class="flex items-center gap-4">
+          <div class="hidden md:flex items-center gap-3 text-white/80 text-sm">
+            <span>In</span><span>Fb</span><span>Tw</span><span>Ig</span>
+          </div>
+          <button data-open-calculator class="bg-white text-[#23212A] font-['Rubik'] px-7 py-3">Request Quote</button>
+        </div>
+      </div>
+      <nav id="mobileNav" class="hidden md:hidden border-t border-white/10 bg-[#091242]">
+        <div class="container py-4 flex flex-col gap-3 text-white/90">
+          <a data-nav href="index.html">Home</a>
+          <a data-nav href="about.html">About</a>
+          <a data-nav href="services.html">Pages</a>
+          <a data-nav href="project.html">Project</a>
+          <a data-nav href="contact.html">Contact</a>
+          <button data-open-calculator class="bg-white text-[#23212A] py-2">Request Quote</button>
+        </div>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="relative bg-cover bg-center" style="background-image:url('assets/images/hero-bg.svg')"><div class="absolute inset-0 bg-[#091242]/80"></div><div class="relative container py-20 text-white grid lg:grid-cols-2 gap-8 items-center"><div><h1 class="font-['Rubik'] text-4xl md:text-5xl">Комплексная логистика для стабильных поставок по России и миру</h1><p class="mt-4 text-white/90">Оптимизируем сроки и стоимость доставки, берем на себя документооборот и контроль всех этапов перевозки.</p><ul class="mt-5 space-y-2"><li>• Единый менеджер проекта 24/7</li><li>• Прозрачная стоимость без скрытых платежей</li><li>• Онлайн-отчетность по каждой партии</li></ul><button data-open-calculator class="mt-7 bg-[#FFBE34] text-[#091242] px-6 py-3 rounded">Получить расчет стоимости</button><div class="mt-8 grid grid-cols-3 gap-3 text-center"><div class="bg-white/10 p-3 rounded"><p class="font-['Rubik'] text-2xl">12+</p><p class="text-sm">лет на рынке</p></div><div class="bg-white/10 p-3 rounded"><p class="font-['Rubik'] text-2xl">48 000+</p><p class="text-sm">доставленных грузов</p></div><div class="bg-white/10 p-3 rounded"><p class="font-['Rubik'] text-2xl">3 200+</p><p class="text-sm">клиентов</p></div></div></div><img src="assets/images/section-photo.svg" alt="Контейнерная логистика и мультимодальные перевозки" class="w-full rounded-xl bg-white/10 p-2"></div></section>
+    <section class="relative bg-cover bg-center" style="background-image: url('assets/images/hero-bg.svg'); min-height: 650px;">
+      <div class="absolute inset-0 bg-[#091242]/75"></div>
+      <div class="relative container py-24 md:py-32 text-white max-w-[1200px]">
+        <span class="tag text-white border-l-[#FFBE34] bg-white/10">Logistics & Supply Chain Solutions</span>
+        <h1 class="font-['Rubik'] text-5xl md:text-6xl leading-[1.1] max-w-[720px] mt-4">Your Gateway to any Destination in the World</h1>
+        <p class="max-w-[560px] text-white/90 mt-6">Доставляем грузы по воздуху, морю и суше с прозрачной коммуникацией и точным соблюдением сроков на каждом этапе поставки.</p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="services.html" class="bg-[#FFBE34] text-[#23212A] font-['Rubik'] px-8 py-4">Explore More</a>
+          <button data-open-calculator class="bg-white/15 border border-white/40 font-['Rubik'] px-8 py-4">Get Quote</button>
+        </div>
+      </div>
+    </section>
 
-    <section class="container py-16"><h2 class="section-title text-3xl">Быстрые преимущества</h2><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8"><article class="border rounded p-5"><h3 class="font-['Rubik'] text-[#1C1F35]">Сроки под KPI</h3><p class="mt-2">Фиксируем дедлайны поставок в договоре.</p></article><article class="border rounded p-5"><h3 class="font-['Rubik'] text-[#1C1F35]">Единый документооборот</h3><p class="mt-2">Готовим транспортные и таможенные документы.</p></article><article class="border rounded p-5"><h3 class="font-['Rubik'] text-[#1C1F35]">Страхование груза</h3><p class="mt-2">Закрываем риски по индивидуальной схеме.</p></article><article class="border rounded p-5"><h3 class="font-['Rubik'] text-[#1C1F35]">Отслеживание 24/7</h3><p class="mt-2">Показываем актуальный статус доставки.</p></article><article class="border rounded p-5"><h3 class="font-['Rubik'] text-[#1C1F35]">Гибкая маршрутизация</h3><p class="mt-2">Меняем логистику при изменении условий.</p></article><article class="border rounded p-5"><h3 class="font-['Rubik'] text-[#1C1F35]">B2B-фокус</h3><p class="mt-2">Работаем с регулярными и проектными поставками.</p></article></div></section>
+    <section class="container py-24 grid lg:grid-cols-[1fr_1.35fr] gap-14 items-start">
+      <div>
+        <span class="tag">What We Do</span>
+        <h2 class="heading text-4xl mt-4">Safe & Reliable Cargo Solutions</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-x-10 gap-y-10">
+        <article class="pl-5 border-l border-[#D8D8D8]"><h3 class="heading text-[22px]">Sea Transport Services</h3><p class="mt-2">Following the quality of our service thus having gained trust of our many clients.</p></article>
+        <article class="pl-5 border-l border-[#D8D8D8]"><h3 class="heading text-[22px]">Warehousing Services</h3><p class="mt-2">Best transport and shipping services available allover the world.</p></article>
+        <article class="pl-5 border-l border-[#D8D8D8]"><h3 class="heading text-[22px]">Air Fright Services</h3><p class="mt-2">Our skilled staff and modern resources for urgent and complex shipments.</p></article>
+        <article class="pl-5 border-l border-[#D8D8D8]"><h3 class="heading text-[22px]">Local Shipping Services</h3><p class="mt-2">Fast domestic distribution for retail, production and e-commerce flows.</p></article>
+      </div>
+    </section>
 
-    <section class="bg-[#F4F4F4]"><div class="container py-16"><h2 class="section-title text-3xl">Основные услуги</h2><div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8"><article class="bg-white rounded p-4"><h3 class="font-['Rubik'] text-[#1C1F35]">Автоперевозки</h3></article><article class="bg-white rounded p-4"><h3 class="font-['Rubik'] text-[#1C1F35]">Авиадоставка</h3></article><article class="bg-white rounded p-4"><h3 class="font-['Rubik'] text-[#1C1F35]">Морская доставка</h3></article><article class="bg-white rounded p-4"><h3 class="font-['Rubik'] text-[#1C1F35]">Железнодорожная доставка</h3></article></div><a href="services.html" class="inline-block mt-6 text-[#091242] font-['Rubik']">Смотреть все услуги →</a></div></section>
+    <section class="bg-[#F4F4F4] py-24">
+      <div class="container grid lg:grid-cols-[1.1fr_1fr] gap-12 items-center">
+        <div class="relative">
+          <img src="assets/images/section-photo.svg" alt="Логистическая команда" class="w-full bg-white p-4">
+          <div class="absolute -bottom-8 left-8 bg-[#FFBE34] px-8 py-6 heading">
+            <p class="text-4xl font-semibold">1294</p>
+            <p>Delivered Packages</p>
+          </div>
+        </div>
+        <div>
+          <span class="tag">Why Us</span>
+          <h2 class="heading text-4xl mt-4">We provide full range global logistics solution</h2>
+          <p class="mt-5">Leverage agile frameworks to provide a robust synopsis for strategy foster collaborative thinking and further the overall value proposition for organic supply chains.</p>
+          <div class="mt-8 space-y-6">
+            <div class="flex items-start gap-4"><span class="text-[#FFBE34] text-2xl">●</span><p>Delivery on Time — стабильно контролируем маршрут и события в пути.</p></div>
+            <div class="flex items-start gap-4"><span class="text-[#FFBE34] text-2xl">●</span><p>Optimized Travel Cost — подбираем оптимальные мультимодальные схемы.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <section class="container py-16"><h2 class="section-title text-3xl">География перевозок</h2><p class="mt-3">Россия, Китай, Турция, ОАЭ, Казахстан, Беларусь, Узбекистан, страны ЕС.</p><img src="assets/images/card-thumb.svg" alt="Схема международных логистических коридоров" class="mt-6 w-full max-w-3xl"><!-- Placeholder: заменить на карту маршрутов --></section>
+    <section class="container py-24">
+      <div class="text-center">
+        <span class="tag">Transporting Across The World</span>
+        <h2 class="heading text-4xl mt-4">Our Successful Transportations</h2>
+      </div>
+      <div class="grid md:grid-cols-4 gap-5 mt-12">
+        <article><img src="assets/images/section-photo.svg" class="h-72 w-full object-cover" alt="Liquid Transportation"><h3 class="heading text-xl mt-4">Liquid Transportation</h3><p class="text-[#FFBE34]">Premium Tankers</p></article>
+        <article><img src="assets/images/hero-bg.svg" class="h-72 w-full object-cover" alt="Packaging Solutions"><h3 class="heading text-xl mt-4">Packaging Solutions</h3><p class="text-[#FFBE34]">Warehouse Management</p></article>
+        <article><img src="assets/images/section-photo.svg" class="h-72 w-full object-cover" alt="Contract Logistics"><h3 class="heading text-xl mt-4">Contract Logistics</h3><p class="text-[#FFBE34]">Road Transportation</p></article>
+        <article><img src="assets/images/hero-bg.svg" class="h-72 w-full object-cover" alt="Specialized Transport"><h3 class="heading text-xl mt-4">Specialized Transport</h3><p class="text-[#FFBE34]">Ocean Cargo</p></article>
+      </div>
+      <div class="text-center mt-12"><a href="project.html" class="inline-block bg-[#091242] text-white font-['Rubik'] px-10 py-4">More Work</a></div>
+    </section>
 
-    <section class="bg-[#091242] text-white"><div class="container py-16"><h2 class="section-title text-white text-3xl">Почему выбирают нас</h2><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8"><article class="bg-white/10 p-4 rounded">Опытная команда ВЭД</article><article class="bg-white/10 p-4 rounded">Прозрачные SLA</article><article class="bg-white/10 p-4 rounded">Финансовая ответственность</article><article class="bg-white/10 p-4 rounded">Оптимизация маршрута</article><article class="bg-white/10 p-4 rounded">Собственная база партнеров</article><article class="bg-white/10 p-4 rounded">Оперативная поддержка</article></div></div></section>
-
-    <section class="container py-16"><h2 class="section-title text-3xl">Как проходит доставка</h2><ol class="grid md:grid-cols-3 gap-4 mt-6"><li class="border rounded p-4">1. Заявка клиента</li><li class="border rounded p-4">2. Расчет стоимости</li><li class="border rounded p-4">3. Забор груза</li><li class="border rounded p-4">4. Оформление документов</li><li class="border rounded p-4">5. Перевозка</li><li class="border rounded p-4">6. Доставка получателю</li></ol></section>
-
-    <section class="bg-[#F4F4F4]"><div class="container py-16"><h2 class="section-title text-3xl">Кейсы</h2><div class="grid md:grid-cols-3 gap-4 mt-6"><article class="bg-white rounded overflow-hidden"><img src="assets/images/card-thumb.svg" alt="Кейс: доставка промышленного оборудования"><div class="p-4"><p class="font-['Rubik'] text-[#1C1F35]">Москва → Алматы</p></div></article><article class="bg-white rounded overflow-hidden"><img src="assets/images/card-thumb.svg" alt="Кейс: доставка медицинских товаров"><div class="p-4"><p class="font-['Rubik'] text-[#1C1F35]">Стамбул → Санкт-Петербург</p></div></article><article class="bg-white rounded overflow-hidden"><img src="assets/images/card-thumb.svg" alt="Кейс: доставка электроники"><div class="p-4"><p class="font-['Rubik'] text-[#1C1F35]">Шанхай → Екатеринбург</p></div></article></div><a href="cases.html" class="inline-block mt-5 text-[#091242] font-['Rubik']">Все кейсы →</a></div></section>
-
-    <section class="container py-16"><div class="flex justify-between items-center"><h2 class="section-title text-3xl">Отзывы</h2><div class="flex gap-2"><button id="prevReview" class="border px-3 py-2 rounded" aria-label="Предыдущий отзыв">←</button><button id="nextReview" class="border px-3 py-2 rounded" aria-label="Следующий отзыв">→</button></div></div><div class="mt-6"><article class="review-item border rounded p-5">«Поставки из Китая стали предсказуемыми, отчеты получаем ежедневно.» — ООО «ТехИмпорт»</article><article class="review-item border rounded p-5 hidden">«В сезонных пиках команда быстро перестроила маршрут и не сорвала производство.» — АО «Мегапром»</article><article class="review-item border rounded p-5 hidden">«Сильная поддержка по таможенному оформлению и прозрачные сроки.» — ООО «БиоМедСнаб»</article></div><a href="reviews.html" class="inline-block mt-5 text-[#091242] font-['Rubik']">Все отзывы →</a></section>
-
-    <section class="bg-[#091242] text-white"><div class="container py-16"><h2 class="section-title text-white text-3xl">Партнеры</h2><div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6"><div class="bg-white/10 p-4 rounded text-center">Партнер 1</div><div class="bg-white/10 p-4 rounded text-center">Партнер 2</div><div class="bg-white/10 p-4 rounded text-center">Партнер 3</div><div class="bg-white/10 p-4 rounded text-center">Партнер 4</div></div><!-- Placeholder: заменить текстовые блоки на логотипы партнеров --></div></section>
-
-    <section class="container py-16"><h2 class="section-title text-3xl">Краткий FAQ</h2><div class="mt-6 space-y-3"><div class="border rounded"><button data-accordion class="w-full p-4 flex justify-between text-left"><span>Какие документы нужны для международной перевозки?</span><span data-icon>+</span></button><div class="hidden px-4 pb-4">Набор документов зависит от типа груза и страны назначения; мы готовим полный комплект под ваш кейс.</div></div><div class="border rounded"><button data-accordion class="w-full p-4 flex justify-between text-left"><span>Можно ли застраховать груз?</span><span data-icon>+</span></button><div class="hidden px-4 pb-4">Да, мы подбираем страховой полис под стоимость и риски конкретной поставки.</div></div><div class="border rounded"><button data-accordion class="w-full p-4 flex justify-between text-left"><span>Как отслеживать статус доставки?</span><span data-icon>+</span></button><div class="hidden px-4 pb-4">Отправляем регулярные статусы и уведомления о каждом ключевом этапе.</div></div><div class="border rounded"><button data-accordion class="w-full p-4 flex justify-between text-left"><span>Работаете ли со сборными грузами?</span><span data-icon>+</span></button><div class="hidden px-4 pb-4">Да, консолидируем партии на складе и оптимизируем итоговую стоимость логистики.</div></div></div><a href="faq.html" class="inline-block mt-5 text-[#091242] font-['Rubik']">Перейти в полный FAQ →</a></section>
-
-    <section class="bg-[#FFBE34]"><div class="container py-14 text-[#091242]"><h2 class="font-['Rubik'] text-3xl">Нужен расчет поставки под ваш маршрут?</h2><p class="mt-2">Оставьте запрос — подготовим коммерческое предложение в течение 30 минут.</p><button data-open-calculator class="mt-5 bg-[#091242] text-white px-6 py-3 rounded">Открыть калькулятор</button></div></section>
+    <section class="bg-[#091242] py-20">
+      <div class="container grid lg:grid-cols-2 gap-10 items-start">
+        <div class="text-white">
+          <span class="tag text-white border-l-[#FFBE34] bg-white/10">Testimonial</span>
+          <h2 class="font-['Rubik'] text-4xl mt-4 leading-tight">What Our Customer Say</h2>
+          <div class="mt-8 bg-white p-8 text-[#666C89] review-item">
+            <p>“TransitFlow has transformed our outbound shipping process. The delivery time improved by 32% and communication is always crystal clear.”</p>
+            <p class="heading mt-5">Jessica Miller, Zein Corp</p>
+          </div>
+        </div>
+        <form class="js-validate-form bg-white p-8 grid sm:grid-cols-2 gap-4" novalidate>
+          <input name="fullName" required placeholder="Your Name*" class="border border-[#4E5683] p-3">
+          <input type="email" name="email" required placeholder="Email*" class="border border-[#4E5683] p-3">
+          <input name="phone" required placeholder="Phone Number*" class="border border-[#4E5683] p-3">
+          <input name="cityFrom" required placeholder="City*" class="border border-[#4E5683] p-3">
+          <textarea name="details" placeholder="Project Details" class="sm:col-span-2 border border-[#4E5683] p-3 min-h-28"></textarea>
+          <button class="sm:col-span-2 bg-[#FFBE34] text-[#23212A] font-['Rubik'] py-3">Submit Message</button>
+          <p data-form-success class="hidden sm:col-span-2 text-green-600">Спасибо! Форма успешно отправлена.</p>
+        </form>
+      </div>
+    </section>
   </main>
 
-  <footer class="bg-[#091242] text-white"><div class="container py-10 grid md:grid-cols-4 gap-6"><div><div class="flex items-center gap-2"><img src="assets/icons/logo-mark.svg" alt="Логотип КаргоСайт" class="h-8 w-8"><span class="font-['Rubik'] text-xl">КаргоСайт</span></div><p class="mt-3 text-sm text-white/80">Логистика для производственных, торговых и e-commerce компаний.</p></div><div><h3 class="font-['Rubik']">Контакты</h3><p class="mt-2"><a href="tel:+78001234567">+7 (800) 123-45-67</a></p><p><a href="mailto:info@cargosite.ru">info@cargosite.ru</a></p><p>Москва, Пресненская наб., 10</p></div><div><h3 class="font-['Rubik']">Разделы</h3><ul class="mt-2 space-y-1"><li><a href="about.html">О компании</a></li><li><a href="services.html">Услуги</a></li><li><a href="cases.html">Кейсы</a></li><li><a href="faq.html">FAQ</a></li></ul></div><div><h3 class="font-['Rubik']">Мы в соцсетях</h3><p class="mt-2">Telegram • VK • YouTube</p><p class="mt-4 text-sm text-white/70">© 2026 КаргоСайт. Все права защищены.</p><p class="text-sm text-white/70">ООО «КаргоСайт Логистика», ИНН 7700000000</p></div></div></footer>
+  <footer class="bg-[#091242] border-t border-white/10 text-white/80">
+    <div class="container py-12 grid md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center gap-3"><img src="assets/icons/logo-mark.svg" class="w-8 h-8" alt=""><span class="font-['Rubik'] text-2xl text-white">TransitFlow</span></div>
+        <p class="mt-4 text-sm">Leverage agile frameworks to provide robust synopsis for strategy and collaborative thinking.</p>
+      </div>
+      <div><h3 class="font-['Rubik'] text-white">Pages</h3><ul class="mt-3 space-y-2"><li><a href="about.html">About</a></li><li><a href="project.html">Project</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h3 class="font-['Rubik'] text-white">Utility</h3><ul class="mt-3 space-y-2"><li><a href="licenses.html">Licenses</a></li><li><a href="changelog.html">Changelog</a></li><li><a href="protected.html">Protected</a></li><li><a href="404.html">Not Found</a></li></ul></div>
+      <div><h3 class="font-['Rubik'] text-white">Subscribe</h3><input placeholder="Email here*" class="mt-3 w-full p-3 bg-transparent border border-white/30"><button class="mt-3 bg-white text-[#23212A] px-6 py-3 font-['Rubik']">Send Now</button></div>
+    </div>
+  </footer>
 
   <div id="calculatorModal" class="fixed inset-0 hidden z-[60] bg-black/60 p-4">
-    <div id="calculatorPanel" class="bg-white max-w-3xl mx-auto mt-10 rounded-xl p-6 relative">
-      <button id="closeCalculatorModal" class="absolute right-4 top-4 text-2xl" aria-label="Закрыть окно расчета">×</button>
-      <h2 class="section-title text-2xl">Получить расчет стоимости перевозки</h2>
+    <div id="calculatorPanel" class="bg-white max-w-3xl mx-auto mt-10 p-8 relative">
+      <button id="closeCalculatorModal" class="absolute right-4 top-4 text-2xl" aria-label="Закрыть">×</button>
+      <h2 class="heading text-3xl">Request a Quote</h2>
       <form class="js-validate-form grid md:grid-cols-2 gap-4 mt-6" novalidate>
-        <input name="fullName" required placeholder="Имя" aria-label="Имя" class="border p-3 rounded">
-        <input name="phone" required placeholder="Телефон" aria-label="Телефон" class="border p-3 rounded">
-        <input type="email" name="email" required placeholder="Email" aria-label="Email" class="border p-3 rounded">
-        <input name="cargoType" required placeholder="Тип груза" aria-label="Тип груза" class="border p-3 rounded">
-        <input name="weight" required placeholder="Вес (кг)" aria-label="Вес груза" class="border p-3 rounded">
-        <input name="volume" required placeholder="Объем (м³)" aria-label="Объем груза" class="border p-3 rounded">
-        <input name="cityFrom" required placeholder="Город отправления" aria-label="Город отправления" class="border p-3 rounded">
-        <input name="cityTo" required placeholder="Город назначения" aria-label="Город назначения" class="border p-3 rounded">
-        <button class="md:col-span-2 bg-[#091242] text-white py-3 rounded">Получить расчет</button>
-        <p data-form-success class="hidden md:col-span-2 text-green-600">Спасибо! Заявка принята, менеджер свяжется с вами в ближайшее время.</p>
+        <input name="fullName" required placeholder="Имя" class="border p-3">
+        <input name="phone" required placeholder="Телефон" class="border p-3">
+        <input type="email" name="email" required placeholder="Email" class="border p-3">
+        <input name="cargoType" required placeholder="Тип груза" class="border p-3">
+        <input name="weight" required placeholder="Вес (кг)" class="border p-3">
+        <input name="volume" required placeholder="Объем (м³)" class="border p-3">
+        <input name="cityFrom" required placeholder="Город отправления" class="border p-3">
+        <input name="cityTo" required placeholder="Город назначения" class="border p-3">
+        <button class="md:col-span-2 bg-[#091242] text-white py-3">Получить расчет</button>
+        <p data-form-success class="hidden md:col-span-2 text-green-600">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
       </form>
     </div>
   </div>
