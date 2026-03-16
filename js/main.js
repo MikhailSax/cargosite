@@ -10,36 +10,69 @@ if (mobileMenuButton && mobileNav) {
 
 window.addEventListener('scroll', () => {
   if (!siteHeader) return;
-  if (window.scrollY > 8) {
-    siteHeader.classList.add('sticky-shadow');
-  } else {
-    siteHeader.classList.remove('sticky-shadow');
+  siteHeader.classList.toggle('sticky-shadow', window.scrollY > 8);
+});
+
+const navLinks = document.querySelectorAll('[data-nav]');
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+navLinks.forEach((link) => {
+  if (link.getAttribute('href') === currentPage) {
+    link.classList.add('text-[#FFBE34]');
   }
 });
 
-document.querySelectorAll('a[data-anchor], a[href^="#"]').forEach((link) => {
-  link.addEventListener('click', (event) => {
-    const href = link.getAttribute('href');
-    if (!href || !href.startsWith('#')) return;
+const modal = document.getElementById('calculatorModal');
+const modalPanel = document.getElementById('calculatorPanel');
+const closeModalButton = document.getElementById('closeCalculatorModal');
 
-    const target = document.querySelector(href);
-    if (!target) return;
+const openModal = () => {
+  if (!modal) return;
+  modal.classList.remove('hidden');
+  document.body.classList.add('overflow-hidden');
+};
 
+const closeModal = () => {
+  if (!modal) return;
+  modal.classList.add('hidden');
+  document.body.classList.remove('overflow-hidden');
+};
+
+document.querySelectorAll('[data-open-calculator]').forEach((button) => {
+  button.addEventListener('click', (event) => {
     event.preventDefault();
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-    if (mobileNav && !mobileNav.classList.contains('hidden')) {
-      mobileNav.classList.add('hidden');
-    }
+    openModal();
   });
 });
+
+if (closeModalButton) {
+  closeModalButton.addEventListener('click', closeModal);
+}
+
+if (modal) {
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+}
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+});
+
+if (mobileNav) {
+  mobileNav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => mobileNav.classList.add('hidden'));
+  });
+}
 
 document.querySelectorAll('[data-accordion]').forEach((button) => {
   button.addEventListener('click', () => {
     const content = button.nextElementSibling;
-    const icon = button.querySelector('span');
+    const icon = button.querySelector('[data-icon]');
     if (!content) return;
-
     const isHidden = content.classList.contains('hidden');
     content.classList.toggle('hidden');
     if (icon) icon.textContent = isHidden ? '−' : '+';
@@ -58,6 +91,7 @@ function showReview(index) {
 }
 
 if (reviewItems.length && prevReviewButton && nextReviewButton) {
+  showReview(reviewIndex);
   prevReviewButton.addEventListener('click', () => {
     reviewIndex = (reviewIndex - 1 + reviewItems.length) % reviewItems.length;
     showReview(reviewIndex);
@@ -69,25 +103,27 @@ if (reviewItems.length && prevReviewButton && nextReviewButton) {
   });
 }
 
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 document.querySelectorAll('.js-validate-form').forEach((form) => {
+  const successBox = form.querySelector('[data-form-success]');
   form.addEventListener('submit', (event) => {
+    event.preventDefault();
     let valid = true;
 
     form.querySelectorAll('[required]').forEach((field) => {
       const value = field.value.trim();
       const isEmail = field.type === 'email';
-      const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-
-      if (!value || (isEmail && !emailValid)) {
-        valid = false;
-        field.classList.add('border-red-500');
-      } else {
-        field.classList.remove('border-red-500');
-      }
+      const isValid = value && (!isEmail || emailPattern.test(value));
+      field.classList.toggle('border-red-500', !isValid);
+      valid = valid && isValid;
     });
 
-    if (!valid) {
-      event.preventDefault();
+    if (!valid) return;
+
+    form.reset();
+    if (successBox) {
+      successBox.classList.remove('hidden');
+      setTimeout(() => successBox.classList.add('hidden'), 4000);
     }
   });
 });
