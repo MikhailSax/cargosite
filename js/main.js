@@ -1,6 +1,12 @@
 const siteHeader = document.getElementById('siteHeader');
 const mobileMenuButton = document.getElementById('mobileMenuButton');
 const mobileNav = document.getElementById('mobileNav');
+const pageMain = document.querySelector('main');
+const pageFooter = document.querySelector('footer');
+
+document.body.classList.add('min-h-screen', 'flex', 'flex-col');
+if (pageMain) pageMain.classList.add('flex-1');
+if (pageFooter) pageFooter.classList.add('mt-auto');
 
 if (mobileMenuButton && mobileNav) {
   mobileMenuButton.addEventListener('click', () => {
